@@ -1,9 +1,22 @@
-/* =========================================
-   FITBUDDY - GLOBAL
-   ========================================= */
-
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #0879e8;
+    --blue-dark: #075fd0;
+    --blue-light: #eef7ff;
+
+    --text: #263449;
+    --muted: #718096;
+
+    --border: #e5ebf2;
+
+    --background: #f7faff;
+
+    --white: #ffffff;
 }
 
 html {
@@ -11,914 +24,1362 @@ html {
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fb;
-    color: #172033;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    min-height: 100vh;
 }
 
-button,
-input,
-select,
-textarea {
-    font: inherit;
-}
 
-button {
-    cursor: pointer;
-}
+/* =====================================================
+   TOP BAR
+===================================================== */
 
+.topbar {
 
-/* =========================================
-   NAVBAR
-   ========================================= */
+    height: 68px;
 
-.navbar {
-    width: 100%;
+    padding: 0 6%;
+
     background: #ffffff;
-    border-bottom: 1px solid #e8ebf0;
-    padding: 16px 7%;
+
+    border-bottom: 1px solid #edf1f5;
+
     display: flex;
+
+    align-items: center;
+
     justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
-.logo {
+.brand {
+
+    color: var(--blue);
+
     font-size: 24px;
+
     font-weight: 800;
-    color: #2563eb;
+
     text-decoration: none;
 }
 
-.nav-links {
-    display: flex;
-    gap: 24px;
-    align-items: center;
-}
+.topbar-right {
 
-.nav-links a {
-    color: #475569;
-    text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
+
+    color: #8995a7;
+
     font-weight: 600;
 }
 
-.nav-links a:hover {
-    color: #2563eb;
+
+/* =====================================================
+   LANDING PAGE
+===================================================== */
+
+.landing-page {
+
+    min-height:
+        calc(100vh - 68px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 50px 30px;
 }
 
+.landing-layout {
 
-/* =========================================
-   MAIN CONTAINER
-   ========================================= */
-
-.container {
     width: 100%;
-    max-width: 1250px;
-    margin: auto;
-    padding: 30px 20px 60px;
-}
 
-
-/* =========================================
-   HOME HERO
-   ========================================= */
-
-.hero {
-    min-height: calc(100vh - 75px);
-    max-width: 1250px;
-    margin: auto;
-    padding: 60px 20px;
+    max-width: 1120px;
 
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 60px;
+
+    grid-template-columns:
+        1.15fr 0.85fr;
+
+    gap: 75px;
+
     align-items: center;
 }
 
-.hero-copy {
-    max-width: 650px;
+
+/* =====================================================
+   LANDING LEFT
+===================================================== */
+
+.landing-intro {
+
+    max-width: 620px;
 }
 
-.eyebrow {
-    display: inline-block;
-    font-size: 12px;
+.small-label {
+
+    color: #1669b8;
+
+    font-size: 11px;
+
     font-weight: 800;
-    letter-spacing: 1.5px;
-    color: #2563eb;
-    margin-bottom: 14px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
 }
 
-.hero h1 {
-    margin: 0;
-    font-size: 58px;
-    line-height: 1.05;
-    letter-spacing: -2px;
-    color: #111827;
-}
+.landing-intro h1 {
 
-.hero h1 span {
-    color: #2563eb;
-}
+    font-size: 56px;
 
-.hero-copy > p {
-    margin: 25px 0;
-    max-width: 600px;
-    color: #64748b;
-    font-size: 17px;
-    line-height: 1.8;
-}
+    line-height: 1.03;
 
-.pill-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
+    letter-spacing: -2.2px;
 
-.pill-row span {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    padding: 9px 14px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #475569;
-}
+    color: #263449;
 
-
-/* =========================================
-   FORM CARD
-   ========================================= */
-
-.card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 22px;
-    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.07);
-}
-
-.form-card {
-    padding: 30px;
-}
-
-.card-head {
     margin-bottom: 24px;
 }
 
-.card-head h2 {
-    margin: 0 0 7px;
-    font-size: 25px;
-    color: #111827;
+.landing-intro h1 span {
+
+    display: block;
+
+    color: #0879e8;
 }
 
-.card-head p {
-    margin: 0;
-    color: #64748b;
-    font-size: 14px;
-}
+.landing-intro > p {
 
+    max-width: 590px;
 
-/* =========================================
-   FORM
-   ========================================= */
+    color: #718096;
 
-.grid.two {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-
-label {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #374151;
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-    border: 1px solid #d7dce5;
-    border-radius: 11px;
-    padding: 12px 13px;
-    background: #ffffff;
-    color: #111827;
-    outline: none;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-
-/* =========================================
-   BUTTONS
-   ========================================= */
-
-.btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-
-    min-height: 46px;
-    padding: 11px 20px;
-
-    border-radius: 11px;
-    border: none;
-
-    font-weight: 700;
-    text-decoration: none;
-
-    transition: 0.2s ease;
-}
-
-.btn.primary {
-    width: 100%;
-    margin-top: 22px;
-    background: #2563eb;
-    color: #ffffff;
-}
-
-.btn.primary:hover {
-    background: #1d4ed8;
-    transform: translateY(-1px);
-}
-
-.btn.secondary {
-    background: #ffffff;
-    color: #2563eb;
-    border: 1px solid #dbe3f0;
-}
-
-.btn.secondary:hover {
-    background: #eff6ff;
-}
-
-.full {
-    width: 100%;
-}
-
-
-/* =========================================
-   FINE PRINT
-   ========================================= */
-
-.fineprint {
-    margin: 14px 0 0;
-    color: #94a3b8;
-    font-size: 11px;
-    line-height: 1.5;
-}
-
-
-/* =========================================
-   ALERTS
-   ========================================= */
-
-.alert {
-    padding: 14px 16px;
-    border-radius: 12px;
-    margin-bottom: 18px;
-    line-height: 1.5;
-}
-
-.alert.error {
-    background: #fef2f2;
-    color: #991b1b;
-    border: 1px solid #fecaca;
-}
-
-.alert.success {
-    background: #f0fdf4;
-    color: #166534;
-    border: 1px solid #bbf7d0;
-}
-
-
-/* =========================================
-   RESULT PAGE
-   ========================================= */
-
-.result-page {
-    max-width: 1250px;
-    margin: auto;
-    padding: 30px 20px 60px;
-}
-
-
-/* =========================================
-   RESULT HERO
-   ========================================= */
-
-.result-hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-
-    padding: 38px;
-    margin-bottom: 25px;
-
-    border-radius: 24px;
-
-    background: linear-gradient(
-        135deg,
-        #2563eb,
-        #7c3aed
-    );
-
-    color: #ffffff;
-
-    box-shadow:
-        0 15px 40px rgba(37, 99, 235, 0.18);
-}
-
-.hero-left {
-    max-width: 700px;
-}
-
-.result-hero .eyebrow {
-    color: #ffffff;
-}
-
-.result-hero h1 {
-    margin: 0 0 12px;
-    font-size: 38px;
-    line-height: 1.15;
-}
-
-.result-hero p {
-    margin: 0;
-    line-height: 1.7;
     font-size: 16px;
-    opacity: 0.92;
+
+    line-height: 1.75;
+
+    margin-bottom: 25px;
 }
 
-.hero-tags {
+.landing-badges {
+
     display: flex;
+
+    gap: 9px;
+
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 22px;
 }
 
-.hero-tags span {
-    padding: 9px 14px;
+.landing-badge {
+
+    background: #ffffff;
+
+    border: 1px solid #e2e9f1;
+
     border-radius: 999px;
 
-    background: rgba(255,255,255,0.16);
-    border: 1px solid rgba(255,255,255,0.25);
+    padding: 8px 13px;
+
+    color: #637187;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 2px 8px rgba(20, 50, 80, 0.03);
+}
+
+.landing-badge span {
+
+    margin-right: 5px;
+}
+
+
+/* =====================================================
+   CREATE CARD
+===================================================== */
+
+.create-card {
+
+    background: rgba(255,255,255,0.96);
+
+    border: 1px solid #e2e8ef;
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 15px 45px rgba(31, 66, 110, 0.08);
+}
+
+.create-card-heading {
+
+    margin-bottom: 24px;
+}
+
+.create-card-heading h2 {
+
+    font-size: 24px;
+
+    color: #273449;
+
+    margin-bottom: 5px;
+}
+
+.create-card-heading p {
 
     font-size: 13px;
-    font-weight: 700;
+
+    color: #8995a7;
 }
 
 
-/* =========================================
-   HERO STATS
-   ========================================= */
+/* =====================================================
+   FORM
+===================================================== */
 
-.hero-stats {
+.form-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 13px;
+
+    margin-bottom: 15px;
+}
+
+.field {
+
     display: flex;
-    gap: 12px;
+
+    flex-direction: column;
+
+    gap: 6px;
 }
 
-.hero-stat {
-    min-width: 85px;
-    padding: 18px 14px;
+.field label {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    color: #3d4b5f;
+}
+
+.field input,
+.field select {
+
+    width: 100%;
+
+    height: 42px;
+
+    border: 1px solid #dce4ec;
+
+    border-radius: 8px;
+
+    padding: 0 11px;
+
+    outline: none;
+
+    color: #364457;
+
+    background: #ffffff;
+
+    font-size: 12px;
+
+    transition: 0.2s;
+}
+
+.field input::placeholder {
+
+    color: #a5afbc;
+}
+
+.field input:focus,
+.field select:focus {
+
+    border-color: #2487ed;
+
+    box-shadow:
+        0 0 0 3px rgba(36,135,237,0.08);
+}
+
+
+/* =====================================================
+   GENERATE BUTTON
+===================================================== */
+
+.generate-button {
+
+    width: 100%;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0878e6,
+            #1268df
+        );
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    transition: 0.2s;
+
+    margin-top: 3px;
+}
+
+.generate-button:hover {
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 7px 20px rgba(8,120,230,0.2);
+}
+
+.generate-button:disabled {
+
+    opacity: 0.65;
+
+    cursor: wait;
+}
+
+.generate-button strong {
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   FORM NOTE
+===================================================== */
+
+.form-note {
 
     text-align: center;
 
-    border-radius: 16px;
+    color: #9aa5b4;
 
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.2);
-}
+    font-size: 9px;
 
-.hero-stat strong {
-    display: block;
-    font-size: 22px;
-}
+    line-height: 1.5;
 
-.hero-stat span {
-    display: block;
-    margin-top: 5px;
-    font-size: 12px;
-    opacity: 0.8;
+    margin-top: 11px;
 }
 
 
-/* =========================================
-   RESULT LAYOUT
-   ========================================= */
+/* =====================================================
+   RESULT PAGE
+===================================================== */
+
+.result-page {
+
+    max-width: 1120px;
+
+    margin: auto;
+
+    padding: 30px 25px 80px;
+}
+
+
+/* =====================================================
+   RESULT HERO
+===================================================== */
+
+.result-hero {
+
+    min-height: 235px;
+
+    border-radius: 22px;
+
+    padding: 32px 38px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            110deg,
+            #0879ed 0%,
+            #086fe4 48%,
+            #324fd0 100%
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+    margin-bottom: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.result-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    right: -150px;
+
+    top: -250px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.06);
+}
+
+.result-eyebrow {
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+
+    margin-bottom: 8px;
+
+    opacity: 0.85;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.result-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 620px;
+}
+
+.result-hero h1 {
+
+    font-size: 31px;
+
+    margin-bottom: 8px;
+
+    letter-spacing: -0.5px;
+}
+
+.result-description {
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    opacity: 0.9;
+
+    max-width: 640px;
+}
+
+
+/* =====================================================
+   HERO STATS
+===================================================== */
 
 .result-layout {
+
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 350px;
-    gap: 25px;
+
+    grid-template-columns:
+        1fr 255px;
+
+    gap: 18px;
+
     align-items: start;
 }
 
-.result-main {
-    min-width: 0;
+.hero-stat-boxes {
+
+    position: absolute;
+
+    right: 30px;
+
+    bottom: 28px;
+
+    display: flex;
+
+    gap: 8px;
+
+    z-index: 5;
 }
 
-.result-sidebar {
+.hero-stat {
+
+    min-width: 67px;
+
+    height: 66px;
+
+    padding: 8px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,0.13);
+
+    border:
+        1px solid rgba(255,255,255,0.14);
+
+    text-align: center;
+
     display: flex;
+
     flex-direction: column;
-    gap: 20px;
-}
 
-
-/* =========================================
-   RESULT CARDS
-   ========================================= */
-
-.result-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 20px;
-    padding: 25px;
-    margin-bottom: 22px;
-
-    box-shadow:
-        0 8px 25px rgba(15, 23, 42, 0.05);
-}
-
-.card-title {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    margin-bottom: 18px;
-}
-
-.title-icon {
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-    align-items: center;
     justify-content: center;
 
-    border-radius: 13px;
-    background: #eff6ff;
-
-    font-size: 22px;
-}
-
-.card-title h2 {
-    margin: 0;
-    font-size: 20px;
-}
-
-.card-title p {
-    margin: 4px 0 0;
-    font-size: 13px;
-    color: #6b7280;
-}
-
-
-/* =========================================
-   OVERVIEW
-   ========================================= */
-
-.overview-text {
-    margin: 0;
-    line-height: 1.8;
-    color: #374151;
-}
-
-
-/* =========================================
-   SAFETY
-   ========================================= */
-
-.safety-box {
-    border-left: 5px solid #f59e0b;
-}
-
-.safety-box p {
-    margin: 0;
-    line-height: 1.7;
-    color: #4b5563;
-}
-
-
-/* =========================================
-   SECTION HEADING
-   ========================================= */
-
-.section-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    gap: 15px;
-
-    margin: 30px 0 18px;
-}
-
-.section-heading h2 {
-    margin: 0;
-    font-size: 28px;
-}
-
-.ai-badge {
-    display: inline-flex;
     align-items: center;
-
-    padding: 8px 13px;
-    border-radius: 999px;
-
-    background: #eef2ff;
-    color: #4338ca;
-
-    font-size: 12px;
-    font-weight: 800;
 }
 
-
-/* =========================================
-   WORKOUT DAY
-   ========================================= */
-
-.workout-day {
-    background: #ffffff;
-
-    border: 1px solid #e5e7eb;
-    border-radius: 20px;
-
-    padding: 25px;
-    margin-bottom: 20px;
-
-    box-shadow:
-        0 8px 25px rgba(15, 23, 42, 0.05);
-}
-
-.workout-day-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    padding-bottom: 20px;
-    margin-bottom: 18px;
-
-    border-bottom: 1px solid #eef0f3;
-}
-
-.day-number {
-    width: 55px;
-    height: 55px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 16px;
-
-    background: #eff6ff;
-    color: #2563eb;
+.hero-stat strong {
 
     font-size: 17px;
-    font-weight: 900;
+
+    line-height: 1;
 }
 
-.workout-day-header h3 {
-    margin: 0;
-    font-size: 22px;
-}
+.hero-stat span {
 
-.workout-day-header p {
-    margin: 5px 0 0;
-    color: #6b7280;
-    font-size: 14px;
-}
+    font-size: 9px;
 
+    opacity: 0.8;
 
-/* =========================================
-   WARMUP / COOLDOWN
-   ========================================= */
-
-.activity-box {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-
-    padding: 15px;
-    margin: 15px 0;
-
-    border-radius: 14px;
-}
-
-.warmup-box {
-    background: #fff7ed;
-}
-
-.cooldown-box {
-    background: #eff6ff;
-}
-
-.activity-icon {
-    font-size: 21px;
-}
-
-.activity-box strong {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.activity-box p {
-    margin: 0;
-    color: #4b5563;
-    line-height: 1.6;
-    font-size: 14px;
+    margin-top: 4px;
 }
 
 
-/* =========================================
-   EXERCISES
-   ========================================= */
+/* =====================================================
+   HERO TAGS
+===================================================== */
 
-.exercise-heading {
-    margin: 22px 0 12px;
-    font-size: 16px;
-}
-
-.exercise-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.exercise-card {
-    display: flex;
-    gap: 14px;
-
-    padding: 16px;
-
-    border: 1px solid #edf0f3;
-    border-radius: 14px;
-
-    background: #fafafa;
-}
-
-.exercise-number {
-    flex-shrink: 0;
-
-    width: 32px;
-    height: 32px;
+.hero-tags {
 
     display: flex;
-    align-items: center;
-    justify-content: center;
 
-    border-radius: 10px;
+    gap: 8px;
 
-    background: #2563eb;
-    color: #ffffff;
+    margin-top: 17px;
 
-    font-size: 13px;
-    font-weight: 800;
-}
-
-.exercise-info {
-    min-width: 0;
-    flex: 1;
-}
-
-.exercise-info h4 {
-    margin: 2px 0 9px;
-    font-size: 16px;
-}
-
-.exercise-meta {
-    display: flex;
     flex-wrap: wrap;
-    gap: 7px;
 }
 
-.exercise-meta span {
-    padding: 5px 9px;
+.hero-tag {
 
-    border-radius: 7px;
+    background:
+        rgba(255,255,255,0.12);
 
-    background: #eef2ff;
-    color: #374151;
+    border:
+        1px solid rgba(255,255,255,0.14);
 
-    font-size: 11px;
+    border-radius: 999px;
+
+    padding: 7px 11px;
+
+    font-size: 10px;
+
     font-weight: 700;
 }
 
-.exercise-notes {
-    margin: 9px 0 0;
 
-    color: #6b7280;
+/* =====================================================
+   WHITE CARDS
+===================================================== */
 
-    font-size: 13px;
+.info-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e5ebf1;
+
+    border-radius: 17px;
+
+    padding: 22px;
+
+    margin-bottom: 16px;
+
+    box-shadow:
+        0 4px 18px rgba(24, 55, 90, 0.025);
+}
+
+.card-title-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 12px;
+}
+
+.card-icon {
+
+    width: 31px;
+
+    height: 31px;
+
+    border-radius: 9px;
+
+    background: #eef5fc;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 15px;
+}
+
+.card-title-row h2 {
+
+    font-size: 18px;
+
+    color: #273449;
+}
+
+.card-subtitle {
+
+    color: #8995a7;
+
+    font-size: 10px;
+
+    margin-top: 1px;
+}
+
+.card-text {
+
+    color: #657388;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   SAFETY
+===================================================== */
+
+.safety-card {
+
+    border-left: 4px solid #e4a03a;
+}
+
+
+/* =====================================================
+   NUTRITION SIDEBAR
+===================================================== */
+
+.nutrition-card {
+
+    position: sticky;
+
+    top: 85px;
+}
+
+.nutrition-item {
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #edf1f5;
+}
+
+.nutrition-item:last-child {
+
+    border-bottom: none;
+
+    padding-bottom: 0;
+}
+
+.nutrition-item-head {
+
+    display: flex;
+
+    gap: 9px;
+
+    align-items: center;
+
+    margin-bottom: 5px;
+}
+
+.nutrition-icon {
+
+    width: 28px;
+
+    height: 28px;
+
+    border-radius: 8px;
+
+    background: #f1f6fb;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 14px;
+}
+
+.nutrition-item strong {
+
+    font-size: 11px;
+
+    color: #435166;
+}
+
+.nutrition-item p {
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    color: #7d8999;
+
+    padding-left: 37px;
+}
+
+
+/* =====================================================
+   PROGRAM HEADER
+===================================================== */
+
+.program-section {
+
+    margin-top: 8px;
+}
+
+.program-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 14px;
+}
+
+.program-heading-left .program-label {
+
+    color: #4c79a5;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 3px;
+}
+
+.program-heading h2 {
+
+    font-size: 25px;
+
+    color: #263449;
+}
+
+.ai-generated {
+
+    background: #ffffff;
+
+    border: 1px solid #e2e9f0;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    color: #56677d;
+}
+
+
+/* =====================================================
+   DAY CARD
+===================================================== */
+
+.day-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e5ebf1;
+
+    border-radius: 17px;
+
+    padding: 22px;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 4px 18px rgba(24,55,90,0.025);
+}
+
+.day-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid #edf1f5;
+
+    margin-bottom: 14px;
+}
+
+.day-number {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 11px;
+
+    background: #eef6ff;
+
+    color: #0879e8;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.day-header h3 {
+
+    font-size: 19px;
+
+    color: #2b384b;
+
+    margin-bottom: 2px;
+}
+
+.day-focus {
+
+    color: #8995a7;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   WARMUP / COOLDOWN
+===================================================== */
+
+.exercise-block {
+
+    margin-bottom: 15px;
+}
+
+.exercise-block-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    color: #405065;
+
+    margin-bottom: 9px;
+}
+
+.warmup-box,
+.cooldown-box {
+
+    background: #f8fafc;
+
+    border-radius: 10px;
+
+    padding: 13px 15px;
+
+    font-size: 11px;
+
+    color: #69778a;
+}
+
+.cooldown-box {
+
+    background: #f1f8ff;
+}
+
+
+/* =====================================================
+   EXERCISE CARD
+===================================================== */
+
+.exercise-item {
+
+    border: 1px solid #e8edf2;
+
+    border-radius: 11px;
+
+    padding: 13px 14px;
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 8px;
+
+    background: #ffffff;
+}
+
+.exercise-number {
+
+    width: 25px;
+
+    height: 25px;
+
+    flex-shrink: 0;
+
+    border-radius: 7px;
+
+    background: #0879e8;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+.exercise-content {
+
+    flex: 1;
+}
+
+.exercise-name {
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    color: #344256;
+
+    margin-bottom: 7px;
+}
+
+.exercise-meta {
+
+    display: flex;
+
+    gap: 13px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 6px;
+}
+
+.exercise-meta span {
+
+    font-size: 9px;
+
+    color: #657388;
+
+    font-weight: 700;
+}
+
+.exercise-note {
+
+    color: #8a95a4;
+
+    font-size: 9px;
+
     line-height: 1.5;
 }
 
 
-/* =========================================
-   NUTRITION
-   ========================================= */
+/* =====================================================
+   REFINE PANEL
+===================================================== */
 
-.nutrition-card {
-    margin-bottom: 0;
+.refine-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e5ebf1;
+
+    border-radius: 17px;
+
+    padding: 21px;
+
+    position: sticky;
+
+    top: 85px;
+
+    margin-bottom: 15px;
 }
 
-.nutrition-item {
-    display: flex;
-    gap: 12px;
-
-    padding: 15px 0;
-
-    border-bottom: 1px solid #eef0f3;
-}
-
-.nutrition-item:last-child {
-    border-bottom: 0;
-    padding-bottom: 0;
-}
-
-.nutrition-icon {
-    flex-shrink: 0;
-
-    width: 35px;
-    height: 35px;
+.refine-heading {
 
     display: flex;
+
+    gap: 10px;
+
+    align-items: flex-start;
+
+    margin-bottom: 14px;
+}
+
+.refine-heading-icon {
+
+    width: 31px;
+
+    height: 31px;
+
+    background: #f1f6fb;
+
+    border-radius: 9px;
+
+    display: flex;
+
     align-items: center;
+
     justify-content: center;
-
-    border-radius: 10px;
-
-    background: #f3f4f6;
 }
 
-.nutrition-item strong {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
+.refine-heading h3 {
+
+    font-size: 16px;
+
+    color: #344256;
+
+    margin-bottom: 2px;
 }
 
-.nutrition-item p {
-    margin: 0;
+.refine-heading p {
 
-    color: #6b7280;
+    color: #929dac;
 
-    font-size: 13px;
+    font-size: 9px;
+}
+
+.refine-description {
+
+    font-size: 10px;
+
+    color: #7a8798;
+
     line-height: 1.6;
+
+    margin-bottom: 12px;
 }
 
+.refine-textarea {
 
-/* =========================================
-   FEEDBACK
-   ========================================= */
-
-.feedback-card {
-    margin-bottom: 0;
-}
-
-.feedback-description {
-    color: #6b7280;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.feedback-card textarea {
     width: 100%;
-    box-sizing: border-box;
+
+    height: 105px;
 
     resize: vertical;
 
-    min-height: 120px;
+    border: 1px solid #dfe6ee;
 
-    padding: 13px;
-    margin: 10px 0 12px;
+    border-radius: 9px;
 
-    border: 1px solid #d1d5db;
-    border-radius: 12px;
+    padding: 11px;
+
+    outline: none;
+
+    font-size: 10px;
+
+    color: #435166;
 
     font-family: inherit;
-    font-size: 14px;
-    outline: none;
+
+    margin-bottom: 9px;
+}
+
+.refine-textarea:focus {
+
+    border-color: #2183e9;
+
+    box-shadow:
+        0 0 0 3px rgba(33,131,233,0.08);
+}
+
+.update-button {
+
+    width: 100%;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #0879e8;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.update-button:hover {
+
+    background: #076bd0;
+}
+
+.new-plan-button {
+
+    width: 100%;
+
+    height: 40px;
+
+    border-radius: 9px;
+
+    border: 1px solid #dfe6ed;
+
+    background: #ffffff;
+
+    color: #4f6075;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.new-plan-button:hover {
+
+    background: #f7faff;
 }
 
 
-/* =========================================
+/* =====================================================
    UPDATE MESSAGE
-   ========================================= */
+===================================================== */
 
 .update-message {
-    margin-bottom: 20px;
+
+    display: none;
+
+    margin-top: 9px;
+
+    padding: 8px;
+
+    border-radius: 7px;
+
+    background: #eefbf3;
+
+    color: #287448;
+
+    font-size: 9px;
+
+    text-align: center;
 }
 
 
-/* =========================================
-   MOBILE
-   ========================================= */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
 
-    .hero {
+    .landing-layout {
+
         grid-template-columns: 1fr;
+
         gap: 35px;
+
+        max-width: 650px;
+    }
+
+    .landing-intro {
+
+        max-width: none;
+
+        text-align: center;
+    }
+
+    .landing-intro > p {
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .landing-badges {
+
+        justify-content: center;
     }
 
     .result-layout {
+
         grid-template-columns: 1fr;
     }
 
-    .result-sidebar {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+    .nutrition-card,
+    .refine-card {
+
+        position: static;
+    }
+
+    .hero-stat-boxes {
+
+        position: static;
+
+        margin-top: 20px;
     }
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
-    .navbar {
-        padding: 14px 20px;
+    .topbar {
+
+        padding: 0 20px;
     }
 
-    .nav-links {
-        gap: 12px;
+    .topbar-right {
+
+        display: none;
     }
 
-    .nav-links a {
-        font-size: 12px;
+    .landing-page {
+
+        padding: 35px 18px;
     }
 
-    .hero {
-        padding: 40px 18px;
-        min-height: auto;
+    .landing-intro h1 {
+
+        font-size: 41px;
+
+        letter-spacing: -1.5px;
     }
 
-    .hero h1 {
-        font-size: 40px;
-        letter-spacing: -1px;
-    }
+    .form-row {
 
-    .hero-copy > p {
-        font-size: 15px;
-    }
-
-    .grid.two {
         grid-template-columns: 1fr;
     }
 
-    .form-card {
-        padding: 22px;
+    .create-card {
+
+        padding: 21px;
     }
 
     .result-page {
-        padding: 20px 12px 40px;
+
+        padding: 20px 13px 50px;
     }
 
     .result-hero {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 25px;
+
+        padding: 24px;
+
+        min-height: auto;
     }
 
     .result-hero h1 {
-        font-size: 30px;
+
+        font-size: 27px;
     }
 
-    .hero-stats {
+    .hero-stat-boxes {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
         width: 100%;
     }
 
     .hero-stat {
-        flex: 1;
+
+        min-width: 0;
     }
 
-    .result-sidebar {
-        display: flex;
+    .program-heading {
+
+        align-items: flex-end;
     }
 
-    .result-card,
-    .workout-day {
-        padding: 18px;
+    .program-heading h2 {
+
+        font-size: 21px;
     }
 
-    .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-    }
+    .day-card {
 
-    .exercise-meta {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 16px;
     }
 }
